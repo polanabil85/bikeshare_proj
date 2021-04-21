@@ -107,7 +107,7 @@ def main():
     print('============================================================')
 
     print('Popular trips: ')
-    print('-------------------------')
+    print('---------------')
     common_start = Filtered_data['Start Station'].mode()[0]
     print('Most common start station is  : ', common_start)
     print('Count of most common start station is : ', Filtered_data['Start Station'].value_counts()[common_start])
@@ -118,7 +118,7 @@ def main():
     print('Most common trip from start to end  is : ', common_trip)
     print('Count of Most common trip from start to end  is : ', Filtered_data['trip'].value_counts()[common_trip])
     print('============================================================')
-    print('Popular times of travel: ')
+    print('Stats travel times: ')
     print('-------------------------')
     print('total travel time is : ', Filtered_data['travel_time'].sum())
     print('average travel time is : ', Filtered_data['travel_time'].mean())
