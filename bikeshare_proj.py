@@ -106,7 +106,7 @@ def main():
     print('Count of most common hour of day is : ', Filtered_data['hour'].value_counts()[common_hour])
     print('============================================================')
 
-    print('Popular times of travel: ')
+    print('Popular trips: ')
     print('-------------------------')
     common_start = Filtered_data['Start Station'].mode()[0]
     print('Most common start station is  : ', common_start)
