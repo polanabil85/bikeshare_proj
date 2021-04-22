@@ -87,7 +87,6 @@ def main():
                 day = 'all'
                 month = 'all'
             break
-    print(city, month, day)
     Filtered_data = load_data(city, month, day)
 
 
@@ -106,8 +105,8 @@ def main():
     print('Count of most common hour of day is : ', Filtered_data['hour'].value_counts()[common_hour])
     print('============================================================')
 
-    print('Popular trips: ')
-    print('---------------')
+    print('Popular Trips: ')
+    print('-------------------------')
     common_start = Filtered_data['Start Station'].mode()[0]
     print('Most common start station is  : ', common_start)
     print('Count of most common start station is : ', Filtered_data['Start Station'].value_counts()[common_start])
@@ -118,7 +117,7 @@ def main():
     print('Most common trip from start to end  is : ', common_trip)
     print('Count of Most common trip from start to end  is : ', Filtered_data['trip'].value_counts()[common_trip])
     print('============================================================')
-    print('Stats travel times: ')
+    print('Stats Travel times: ')
     print('-------------------------')
     print('total travel time is : ', Filtered_data['travel_time'].sum())
     print('average travel time is : ', Filtered_data['travel_time'].mean())
@@ -140,6 +139,17 @@ def main():
         print('Most common Year of birth is : ', common_year)
         print('Most early Year of birth is : ', earliest_year)
         print('Most recent Year of birth is : ', recent_year)
+
+    while True:
+        view_ind_data = input('Would you like to view individual data ? (y/n): ')
+        if view_ind_data == 'y':
+            i=0
+            for j in range(i,i+6):
+                print(Filtered_data.loc[j].to_json())
+            i+=6
+            continue
+        else:
+            break
 
 if __name__ == '__main__':
     while True:
